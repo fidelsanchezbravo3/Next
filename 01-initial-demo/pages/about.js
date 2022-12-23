@@ -1,28 +1,29 @@
-import Head from "next/head";
 import Link from "next/link";
-import { Navbar } from "../components/Navbar";
-import styles from "../styles/Home.module.css";
+import { DarkLayout } from "../layout/DarkLayout";
+import { MainLayout } from "../layout/MainLayout";
 
 export default function AboutPage() {
   return (
     <>
-      <Head>
-        <title>About - Fidel</title>
-        <meta name="description" content="About Page" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <Navbar />
-
-      <main className={styles.main}>
-        <h1>About Page</h1>
-        <h1 className={styles.title}>
-          {/* Ir a <a href="/">Home</a> */}
-          Ir a <Link href="/">Home</Link>
-        </h1>
-        
-      </main>
+      <h1>About Page</h1>
+      <h1 className={"title"}>
+        {/* Ir a <a href="/">Home</a> */}
+        Ir a <Link href="/">Home</Link>
+      </h1>
+      <div>
+        <p className={"description"}>
+          Get started by editing{""}
+          <code className={"code"}>pages/about.js</code>
+        </p>
+      </div>
     </>
   );
 }
+
+AboutPage.getLayout = function getLayout(page) {
+  return (
+    <MainLayout>
+      <DarkLayout>{page}</DarkLayout>
+    </MainLayout>
+  );
+};
