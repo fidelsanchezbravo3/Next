@@ -1,4 +1,10 @@
-export const menuItems = [
+
+type Data = {
+    text: string;
+    href: string;
+}
+
+export const menuItems: Array<Data> = [
     {
         text: 'Home',
         href: '/'

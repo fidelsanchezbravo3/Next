@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MainLayout } from "../layout/MainLayout";
+import { MainLayout } from "../../layout/MainLayout";
 
 export default function ContactPage() {
   return (
